@@ -1,0 +1,1344 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Bold.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.woff2https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Bold.woff2')
+      format('woff2'),
+    url('https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Bold.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Medium';
+  src: url('https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Medium.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.woff2https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Medium.woff2')
+      format('woff2'),
+    url('https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Medium.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Regular.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.woff2https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Regular.woff2')
+      format('woff2'),
+    url('https://cdn.banggooso.com/sr/assets/fonts/Pretendard-Regular') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  src: url('https://cdn.banggooso.com/sr/assets/fonts/Pretendard-SemiBold.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.woff2https://cdn.banggooso.com/sr/assets/fonts/Pretendard-SemiBold.woff2')
+      format('woff2'),
+    url('https://cdn.banggooso.com/sr/assets/fonts/Pretendard-SemiBold') format('woff');
+  font-style: normal;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+html {
+  font-size: 16px;
+  font-family: 'Pretendard' !important;
+}
+.game-wrapper .app-header,
+.game-wrapper.basic .app-header {
+  height: 4.06rem !important;
+}
+/* 공통 */
+.share-sns-list .list {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.share-sns-list .btn-share {
+  height: 5rem !important;
+}
+
+button,
+li,
+ul,
+dt,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+div,
+a,
+p,
+span,
+b {
+  transform: skew(0deg);
+}
+
+.pos-rel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.img-width {
+  width: 100%;
+}
+
+.bold-txt {
+  font-family: 'Pretendard-Bold';
+}
+.txt-center {
+  text-align: center;
+}
+.common-btn {
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Pretendard-SemiBold';
+  padding: 1.3rem 0;
+  width: 100%;
+  background-color: rgba(245, 130, 32, 1);
+  border-radius: 12px;
+}
+
+/* 전체 큰 레이아웃 */
+.game-wrapper.basic .app-header,
+.game-wrapper .app-header.page {
+  border: none !important;
+  position: relative;
+}
+
+.app .app-header.intro-header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  border: none;
+}
+
+.app .app-header.test-header.intro-header .app-header-btn.back {
+  background: transparent url(https://cdn.banggooso.com/assets/images/icons/back-arrow-b.png) no-repeat center center /
+    auto 1.2rem !important;
+}
+.app .app-header.test-header .app-header-btn.back {
+  background: transparent url(https://cdn.banggooso.com/assets/images/icons/back-arrow-b.png) no-repeat center center /
+    auto 1.2rem !important;
+}
+
+.game-wrapper .app-header .app-header-btn.back {
+  height: 100%;
+  background: transparent url(https://cdn.banggooso.com/assets/images/icons/back-arrow-w.png) no-repeat center center /
+    auto 1.2rem;
+}
+.game-wrapper .app-header.result .app-header-btn.back {
+  height: 100%;
+  background: transparent url(https://cdn.banggooso.com/assets/images/icons/back-arrow-b.png) no-repeat center center /
+    auto 1.2rem;
+}
+.game-wrapper .app-header.page .app-header-btn.back {
+  background: transparent url(https://cdn.banggooso.com/assets/images/icons/back-arrow-b.png) no-repeat center center /
+    auto 1.2rem;
+}
+
+#modal .modal-cont.wrong-answer > p {
+  color: #000000;
+}
+
+#modal .modal-cont.wrong-answer .closeHint {
+  color: #000000;
+}
+
+.result-padding-area {
+  padding: 0 1.875rem;
+}
+
+/* 게임 인트로 */
+.game-intro,
+.game-wrapper .game-intro {
+  padding-bottom: 0 !important;
+}
+.game-intro .img-box {
+  margin-bottom: 0 !important;
+}
+.game-intro .bottom-area {
+  padding: 1.875rem;
+  padding-bottom: 6.25rem;
+  background-color: rgba(237, 237, 237, 1);
+  border-radius: 2.5rem 2.5rem 0 0;
+  box-shadow: 0px -3px 15px 0px rgba(51, 51, 51, 0.25);
+}
+
+.game-intro .btn-wrap {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+.game-intro .btn-game-start {
+  background: rgba(251, 122, 6, 1) !important;
+  color: white !important;
+  font-family: 'pretendard-Bold';
+  border-radius: 12px;
+  font-size: 1.62em;
+  padding: 1.5rem 0;
+  line-height: 1.87rem !important;
+}
+.game-intro .btn-game-start {
+  box-shadow: none !important;
+  border: none !important;
+}
+.game-intro .notice-ment {
+  color: rgba(51, 51, 51, 0.5);
+  font-size: 1.125em;
+  font-family: 'pretendard-Medium' !important;
+}
+.game-intro .notice-ment {
+  font-family: 'pretendard';
+  text-align: center;
+  width: 100%;
+  margin-top: 0.87rem;
+}
+.game-intro .notice-ment-small {
+  font-family: 'pretendard-Regular' !important;
+  color: #3333334d;
+  font-size: 0.81rem;
+  line-height: 1.18rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.game-intro .share-sns-list {
+  background-color: rgba(237, 237, 237, 1) !important;
+}
+.share-sns-list .list-title {
+  margin-bottom: 0rem !important;
+}
+.game-intro .share-sns-list .list-title span {
+  color: rgba(4, 59, 114, 1) !important;
+  font-family: 'pretendard-Bold' !important;
+  font-size: 1.5rem !important;
+}
+
+.share-sns-list .list-title .countBox .countNumber {
+  color: rgba(4, 59, 114, 1) !important;
+  font-family: 'pretendard-Medium' !important;
+  font-size: 1.25em !important;
+  font-weight: initial !important;
+  margin-top: -0.3rem;
+}
+.share-sns-list .list-title .countBox .countImg {
+  margin-top: -0.3rem;
+  background-image: url('https://cdn.banggooso.com/assets/images/game213/intro/share.png');
+}
+.game-intro .most {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(34, 51, 69, 0.2);
+  margin: 0 auto !important;
+}
+.game-intro .game-count .count-label,
+.game-intro .result-box .result-box-title {
+  font-family: 'pretendard-Bold' !important;
+  font-size: 1.62em !important;
+}
+.game-intro .result-box .result-box-title2 > small {
+  font-family: 'pretendard-Regular';
+  font-weight: initial;
+}
+.game-intro .game-count .count-label,
+.game-intro .result-box .result-box-title,
+.game-intro .result-box .result-box-title2,
+.game-intro .result-box .result-box-title2 > small,
+.game-wrapper.basic .bottom-area .result-box .img-halt-box ul.list > li span.label-top,
+.result-box .bottom-area .img-halt-box ul.list > li a span,
+.game-intro .bottom-area .result-box .result-box-title2,
+.game-intro .bottom-area .result-box .result-box-title2 > small,
+.result-box .bottom-area .img-halt-box ul.list > li span.label-bottom > em,
+.result-box .img-halt-box ul.list > li a span,
+.result-box .img-halt-box ul.list > li span.label-bottom > em {
+  color: rgba(4, 59, 114, 1) !important;
+}
+.result-box .img-halt-box ul.list > li a span {
+  font-size: 1em !important;
+  font-family: 'Pretendard-Medium' !important;
+}
+
+.result-box .img-halt-box ul.list > li span.label-bottom > em {
+  font-size: 1em !important;
+  font-weight: initial !important;
+  font-family: 'Pretendard-Regular' !important;
+}
+.game-intro .result-box .result-box-title2,
+.game-intro .result-box .result-box-title2 > small {
+  font-size: 1em !important;
+  color: rgba(34, 51, 69, 1) !important;
+}
+.result-box .img-halt-box ul.list > li span.label-top {
+  text-shadow: none !important;
+  font-family: 'pretendard-Bold' !important;
+  font-weight: initial !important;
+  font-size: 1.62em !important;
+}
+.game-wrapper.basic .result-box .img-halt-box ul.list > li span.label-bottom,
+.game-wrapper.basic .result-box.most .img-halt-box .list.most_types li > span.label-bottom {
+  font-size: 1.25rem !important;
+  font-family: 'pretendard-Medium' !important;
+  font-weight: initial !important;
+}
+.game-intro .result-box .result-box-title:before {
+  font-family: 'pretendard-Medium' !important;
+  background-color: transparent !important;
+}
+.game-intro .result-box {
+  padding: 1.75rem 0 !important;
+}
+/* 문제 페이지 */
+
+.game-wrapper .app-header .app-logo {
+  width: 25.8rem;
+  background-size: 100%;
+  background-image: url('https://cdn.banggooso.com/assets/images/game213/header.png');
+}
+
+.game-wrapper .game-wrap {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 1030px;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.game-wrap .full-page {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-wrapper .app-main {
+  height: 100vh;
+  color: #000000;
+}
+
+.game-wrap .game-title {
+  color: rgba(4, 59, 114, 1);
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+}
+
+.game-wrap .game-body {
+  padding: 0 !important;
+  margin: 0;
+  width: 100%;
+}
+/* 문제페이지 진행바 */
+.question-controller {
+  text-align: center;
+}
+.question-controller .controller-title {
+  font-size: 1.5rem;
+  color: rgba(4, 59, 114, 1);
+  font-family: 'Pretendard-Bold';
+  padding: 1rem;
+  width: 100%;
+}
+.question-controller .outer {
+  width: 100%;
+  height: 0.3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.question-controller .inner {
+  width: 70%;
+  height: 0.3rem;
+  background-color: #f58220;
+}
+.question-template-area {
+  width: 100%;
+  padding: 3.12rem 1.87rem;
+  gap: 1rem;
+  flex-grow: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+/*문제 페이지*/
+.game-wrap .question-text {
+  min-height: 80px;
+  text-align: center;
+  color: black;
+  font-family: var(--game-185-font);
+}
+
+.question-icon {
+  width: 3rem;
+  object-fit: contain;
+  margin-top: -0.5rem;
+  margin-left: 0;
+  /* animation: pop 1.5s 2; */
+}
+.game-wrap .game-body .question-title-flex {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.game-wrap .game-body .question-title {
+  font-family: 'pretendard';
+  color: rgba(4, 59, 114, 1);
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+.game-wrap .game-body.test-step-4 .question-title {
+  font-size: 1.6rem !important;
+}
+.test-step-5 .question-title,
+.test-step-8 .question-title {
+  font-size: 1.7rem !important;
+}
+.game-wrap .result-btn {
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pretendard-SemiBold';
+  font-size: 1.1rem;
+}
+
+.select-area {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.game-wrap .select-area a {
+  width: 100%;
+  background-color: #f5f6f8;
+  display: flex;
+  align-items: center;
+  font-size: 1.37rem;
+  font-family: 'Pretendard-SemiBold';
+  height: 6.87rem;
+  padding: 0 1.25rem;
+  border-radius: 12px;
+  text-align: center;
+  justify-content: center;
+}
+.select-area a:active {
+  background-color: #f58220;
+  color: white;
+}
+/* 능력치 게스트 설문 : 설문페이지 */
+.survey-area {
+  width: 100%;
+  height: 100%;
+  padding: 3.125rem 1.875rem;
+  background-color: rgba(245, 246, 248, 1);
+  text-align: center;
+}
+.loading-title {
+  color: rgba(4, 59, 114, 1);
+  font-size: 2rem;
+  font-family: 'Pretendard-Bold' !important;
+  line-height: 2.75rem;
+}
+.loading-txt {
+  color: rgba(4, 59, 114, 1);
+  font-size: 1.2rem;
+  font-family: 'Pretendard-SemiBold';
+  line-height: 1.56rem;
+  margin: 0.25rem 0 1.5rem 0;
+}
+.survey-box {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 3.125rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  box-shadow: 0px 10px 20px 0px rgba(34, 51, 69, 0.06);
+}
+.survey-title {
+  color: rgba(51, 51, 51, 1);
+  font-family: 'Pretendard-Medium';
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-align: left;
+}
+.survey-age-select {
+  width: 100%;
+  font-size: 1.75rem;
+  font-family: 'Pretendard-SemiBold';
+  line-height: 1.08rem;
+  border-bottom: 2px solid rgba(51, 51, 51, 0.5);
+  padding: 1.25rem 0.9rem 0.8rem 0.9rem;
+  color: rgba(51, 51, 51, 0.5);
+  display: flex;
+  justify-content: space-between;
+}
+.survey-sex-txt a {
+  color: rgba(51, 51, 51, 0.5);
+}
+.survey-sex-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.survey-sex-box {
+  background-color: rgba(245, 246, 248, 1);
+  color: rgba(51, 51, 51, 0.5);
+  font-family: 'Pretendard-SemiBold';
+  font-size: 1.62rem;
+  padding: 1.05rem;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: space-between;
+}
+
+.app-sign-page .form-checkbox {
+  accent-color: rgba(245, 130, 32, 1);
+}
+#manCheckbox,
+#womanCheckbox {
+  position: absolute;
+  left: -999em;
+}
+.circle {
+  display: inline-block; /* 영역적용가능해짐 */
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(51, 51, 51, 0.5);
+  box-sizing: border-box;
+  border-radius: 999px; /* 모서리둥글게 처리 */
+  position: relative;
+  top: 4px;
+  cursor: pointer; /* 마우스 올렸을때 손모양 처리 */
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#manCheckbox:checked + .circle,
+#womanCheckbox:checked + .circle {
+  background-color: white;
+  border: solid 1px white;
+  border-color: #f58220;
+  background-image: url('https://cdn.banggooso.com/assets/images/game213/question/check.png');
+}
+
+.survey-btn {
+  width: 100%;
+  background-color: #d6d6d6;
+  color: white;
+  font-family: 'Pretendard-SemiBold';
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1.75rem;
+}
+/* 능력치 게스트 설문 : dropBox */
+.dropBoxBottom {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+.dropbox {
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  height: 32rem;
+  border-radius: 20px 20px 0 0;
+}
+.dropbox-scroll-zone {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  padding-bottom: 5.5rem;
+}
+.dropbox-title {
+  margin-top: 0.6rem;
+  font-family: 'Pretendard-SemiBold';
+}
+.dropbox-txt {
+  font-family: 'Pretendard-Medium';
+  font-size: 1.5rem;
+  color: #333333;
+  padding: 1.37rem 1.875rem;
+}
+.dropbox-select:hover,
+.dropbox-select:active {
+  background-color: rgba(255, 227, 203, 1);
+  color: rgba(245, 130, 32, 1) !important;
+}
+/* 결과 페이지 */
+.game-result .contents-more .contents-list .game-btn {
+  font-family: 'Pretendard' !important;
+  font-weight: initial !important;
+}
+.game-result .contents-more .contents-list .game-btn {
+  font-size: 1.375rem !important;
+}
+.result-header {
+  width: 100%;
+  text-align: center;
+  padding: 0.65rem 0;
+  color: #043b72 !important;
+  font-family: 'Pretendard-Bold';
+  font-size: 1.5rem;
+  border-bottom: rgba(0, 0, 0, 0.1) solid 0.75px;
+}
+.game-wrapper.basic .game-result {
+  padding: 0 !important;
+}
+/* 결과페이지 : result-top */
+.result-top {
+  margin-top: 1.875rem;
+  text-align: center;
+  position: relative;
+}
+.result-top-first {
+  width: 100%;
+  z-index: 99;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.first-title {
+  width: 100%;
+  color: rgba(4, 59, 114, 1);
+  font-family: 'Pretendard-Bold';
+  font-size: 1.5rem;
+  text-align: center;
+}
+.result-score {
+  font-size: 2.75rem;
+  font-family: 'Pretendard-Bold';
+  color: rgba(4, 59, 114, 1);
+  line-height: 3.28rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.result-image {
+  width: 17.5rem;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 99;
+}
+.result-image img {
+  border-radius: 12px;
+}
+.result-top-desc {
+  width: 100%;
+  margin-top: -3rem;
+  background-color: rgba(245, 246, 248, 1);
+  box-shadow: 0px 15px 15px 0px rgba(34, 51, 69, 0.12);
+  padding: 4.25rem 1.875rem 3.125rem 1.875rem;
+  border-radius: 30px;
+  z-index: -1;
+  position: relative;
+  text-align: center;
+}
+
+.desc-semititle {
+  font-size: 1.5rem;
+  color: #333333 !important;
+  font-family: 'Pretendard-Bold';
+  line-height: 2.5rem;
+}
+.desc-title {
+  font-family: 'Pretendard-Bold';
+  color: rgba(245, 130, 32, 1);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+
+.doughnut-chart {
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+/* 도표 그래프 */
+.chart-content {
+  padding: 0rem 1rem 0 1rem;
+}
+.chart-title {
+  font-size: 1.75rem;
+  font-family: 'Pretendard-Bold';
+  line-height: 2.08rem;
+  color: rgba(4, 59, 114, 1);
+  margin-bottom: 1rem;
+}
+.chart-list {
+  font-size: 1.37rem;
+  font-family: 'Pretendard-Regular';
+  list-style: disc;
+  line-height: 2.375rem;
+  text-align: left;
+  margin-left: 0.5rem;
+  color: #333333 !important;
+}
+.chart-list li::marker {
+  color: #333333;
+  font-size: 12px;
+}
+.doughnut-chart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2.3rem;
+}
+
+.circle-chart__circle {
+  animation: circle-chart-fill 2s reverse; /* 1 */
+  transform: rotate(-90deg) scale(1, 1);
+  transform-origin: center; /* 4 */
+}
+.circle-chart {
+  box-shadow: 0px 3px 12px 0px #22334533;
+  border-radius: 100000px;
+  background: radial-gradient(circle, white 60%, transparent 5%, #22334533 90%);
+}
+.circle-chart__info {
+  animation: circle-chart-appear 2s forwards;
+  opacity: 0;
+  transform: translateY(0.3em);
+}
+
+.circle-chart__percent {
+  color: #333333 !important;
+  font-family: 'Pretendard-Medium';
+}
+
+@keyframes circle-chart-fill {
+  to {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@keyframes circle-chart-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chart-cate {
+  font-family: 'Pretendard-SemiBold';
+  font-size: 1.25rem;
+  color: #333333 !important;
+}
+
+/* 결과페이지 : result-mid */
+.result-mid {
+  width: 100%;
+  height: 100%;
+  padding: 3.125rem 1.875rem 1.875rem 1.875rem;
+}
+.result-desc-title {
+  width: 100%;
+  color: rgba(4, 59, 114, 1);
+  font-family: 'Pretendard-Bold';
+  font-size: 1.75rem;
+  text-align: center;
+  line-height: 2.37rem;
+  margin-bottom: 1rem;
+}
+.result-desc-box {
+  width: 100%;
+  background-color: rgba(245, 246, 248, 1);
+  padding: 1.75rem 1.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-radius: 12px;
+  color: rgba(51, 51, 51, 1);
+  font-family: 'Pretendard-Medium';
+  font-weight: 400;
+  margin-bottom: 3.125rem;
+}
+.result-desc-box-2 {
+  padding: 1.25rem 1.5rem !important;
+  margin-bottom: 1rem !important;
+  gap: 0 !important;
+}
+.result-desc-box-3 {
+  padding: 0 !important;
+}
+.result-desc-box-2 .result-desc-semi-txt {
+  font-size: 1.37rem;
+  line-height: 2.37rem;
+  font-family: 'Pretendard-Regular' !important;
+}
+.if-box .result-desc-box {
+  margin-bottom: 1rem !important;
+}
+.result-desc-li {
+  display: flex;
+  flex-direction: row;
+  gap: 0.62rem;
+  align-items: center;
+  font-size: 1.37rem;
+  font-family: 'Pretendard-Regular' !important;
+}
+.check-img {
+  width: 1.25rem;
+}
+.result-desc-semi-title {
+  width: 100%;
+  font-family: 'Pretendard-Bold';
+  text-align: left;
+  color: rgba(245, 130, 32, 1);
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+.result-hope-flex {
+  width: 100%;
+  display: flex;
+  /* gap: 1.1rem;
+  align-items: center; */
+  justify-content: space-between;
+}
+.result-desc-semi-txt2 {
+  font-size: 1.37rem;
+  margin-top: 0.75rem;
+  font-family: 'Pretendard-Regular' !important;
+}
+.result-hope-flex .result-desc-semi-txt {
+  width: 58%;
+}
+.result-desc-semi-txt {
+  font-size: 1.37rem;
+}
+.event-about-box {
+  margin: 0.875rem 0 0.625rem 0;
+}
+
+.famous-img {
+  width: 38%;
+  border-radius: 12px !important;
+}
+.famous-img img {
+  border-radius: 12px !important;
+}
+.fund-landing-btn {
+  margin: 1rem 0 0.75rem 0;
+  gap: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success-box {
+  margin-top: 3.125rem;
+}
+.success-landing-btn-div {
+  padding: 0 1.87rem;
+}
+.success-landing-btn {
+  margin: 1rem 0 3.12rem 0;
+}
+
+.result-toggle-hide {
+  width: 100%;
+  margin-top: 2rem;
+  border-top: rgba(242, 243, 245, 1) solid 1.33px;
+  background-color: white;
+  color: rgba(245, 130, 32, 1);
+  font-family: 'Pretendard-SemiBold';
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1.96rem 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.result-toggle-hide:active {
+  background: #bdbdbd;
+}
+.svg-toggle {
+  margin-top: -0.2rem;
+}
+.result-hide-chart {
+  display: none;
+  margin-bottom: 1rem;
+}
+/* 결과페이지 : 유형 순위 통계창 */
+.test-list-item {
+  background-color: rgba(245, 246, 248, 1) !important;
+}
+.test-lists-wrap .test-lists {
+  padding: 0 1.875rem !important;
+}
+.game-wrapper.basic .test-lists-wrap .title:before,
+.test-lists-wrap .title:before {
+  background: none !important;
+}
+
+.test-lists-wrap .title {
+  font-family: 'Pretendard-Bold' !important;
+  color: rgba(4, 59, 114, 1) !important;
+  font-size: 1.75rem !important;
+  text-shadow: none !important;
+}
+.test-lists-wrap .list-title {
+  font-family: 'Pretendard-Bold' !important;
+  color: #000000;
+  font-size: 1.5rem !important;
+  text-shadow: none !important;
+}
+.test-lists-wrap .test-lists .test-list-item .item-wrap .item-info .item-title {
+  font-family: 'Pretendard-Bold' !important;
+}
+.test-lists-wrap .test-lists .test-list-item .item-wrap {
+  display: block !important;
+}
+.test-lists-wrap .test-lists .test-list-item .item-wrap .content {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+}
+.test-lists-wrap .test-lists .test-list-item.rank_list .percen {
+  font-family: 'Pretendard-Medium' !important;
+  background-color: rgba(245, 130, 32, 1) !important;
+  color: white;
+  border-radius: 4px !important;
+  font-size: 0.9rem;
+  list-style: 1.1rem;
+  padding: 0.05rem 0.6rem !important;
+  width: 9.8rem;
+
+  font-weight: initial !important;
+}
+.game-wrapper.basic .test-lists-wrap .test-lists .test-list-item.rank_list .percen span {
+  font-weight: initial !important;
+}
+.test-lists-wrap .test-lists .test-list-item.rank_list .item-info {
+  color: #000000 !important;
+  font-family: var(--game-185-font);
+}
+.test-lists-wrap .test-lists .test-list-item.rank_list .num {
+  font-family: 'Pretendard-Bold' !important;
+  width: 12% !important;
+  text-shadow: none !important;
+}
+.test-lists-wrap .test-lists .test-list-item .item-title > p {
+  color: black !important;
+  font-size: 1.06rem !important;
+  margin-bottom: 0 !important;
+}
+
+.test-lists-wrap .test-lists .test-list-item .item-title > span {
+  color: black !important;
+  font-family: 'Pretendard-Bold' !important;
+  font-size: 1.5rem !important;
+}
+
+.game-wrapper .test-lists-wrap .test-lists .test-list-item {
+  padding: 1rem 1.25rem !important;
+  border-color: #f1f1f1;
+  border: none !important;
+}
+.test-lists-wrap .title {
+  color: rgba(51, 51, 51, 1) !important;
+  font-size: 1.75rem !important;
+}
+.test-lists-wrap .test-lists .test-list-item.rank_list .item-info p {
+  font-size: 1.06rem !important;
+  color: #333333 !important;
+  font-weight: initial !important;
+  font-family: 'Pretendard-Medium' !important;
+}
+.game-wrapper.basic .test-lists-wrap .test-lists .test-list-item .item-wrap .item-info .item-title p {
+  font-family: 'Pretendard-Bold' !important;
+  font-weight: initial !important;
+  color: #333333 !important;
+  font-size: 1.5rem !important;
+}
+.test-lists-wrap .test-lists .test-list-item .item-wrap .thumb {
+  width: 7.8rem !important;
+  border-radius: 10px;
+}
+.test-lists-wrap .test-lists .test-list-item .item-wrap .thumb img {
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px 0px rgba(51, 51, 51, 0.25);
+}
+/* 결과페이지 : 공유하기 리스트 */
+.share-sns-list {
+  margin: 0 auto !important;
+  background-color: rgba(245, 246, 248, 1);
+  padding: 2rem 0 !important;
+  border-radius: 12px;
+  font-weight: initial !important;
+}
+.game-result .share-sns-list span {
+  color: rgba(4, 59, 114, 1) !important;
+  font-size: 1.375rem !important;
+  font-family: 'Pretendard-Bold';
+  font-weight: initial !important;
+}
+
+.share-sns-list .btn-share.kakao {
+  background-image: url('https://cdn.banggooso.com/assets/images/game213/result/kakao.png') !important;
+  background-size: 100%;
+  width: 3.125em;
+}
+
+.share-sns-list .btn-share.instagram {
+  background-image: url('https://cdn.banggooso.com/assets/images/game213/result/insta.png');
+  background-size: 100%;
+  width: 3.125em;
+}
+
+.share-sns-list .btn-share.facebook {
+  background-image: url('https://cdn.banggooso.com/assets/images/game213/result/fb.png');
+  background-size: 100%;
+  width: 3.125em;
+}
+
+.share-sns-list .btn-share.twitter {
+  background-image: url('https://cdn.banggooso.com/assets/images/game213/result/twt.png');
+  background-size: 100%;
+  width: 3.125em;
+}
+
+.share-sns-list .btn-share.link-copy {
+  background-image: url('https://cdn.banggooso.com/assets/images/game213/result/link.png');
+  background-size: 100%;
+  width: 3.125em;
+}
+/* 결과페이지 : 콘텐츠 더보기 영역 */
+.game-result .recommend-list .btn-wrap {
+  margin-top: 1.62rem;
+}
+.game-result .contents-more .contents-main .contents-logo img {
+  width: 30%;
+}
+.contents-more .contents-list {
+  padding: 0 !important;
+}
+.game-result .contents-more .contents-list .game-btn {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+  padding: 1.7rem 1.7rem !important;
+  position: relative;
+  letter-spacing: 0.1px;
+  font-size: 1rem !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-top: 1px solid black !important;
+  cursor: pointer;
+}
+.game-result .contents-more .contents-list .game-btn:before {
+  left: 90%;
+}
+
+.game-result .contents-more {
+  background: transparent;
+  font-family: var(--game-207-font-main) !important;
+  border: none;
+  margin: 0 0 2.5rem 0;
+  flex-direction: column;
+}
+
+.game-result .contents-more .contents-main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 1.5rem 1.5rem 0.75rem 1.5rem;
+}
+
+.game-result .contents-more .contents-list {
+  margin: 0 0 0.5rem 0;
+}
+
+.game-result .contents-more .contents-list {
+  border-left: 1px solid #272727;
+}
+.game-result .contents-more .contents-list {
+  border-left: none;
+}
+.game-result .more-contents-213 .contents-more .contents-list .game-btn {
+  font-size: 1.375rem !important;
+}
+.game-result .contents-more .contents-main .sub-text {
+  color: #272727;
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-size: 1.5rem !important;
+  text-align: left;
+}
+/* 유형별 궁합 */
+.game-result .result-box .result-box-title {
+  width: 100%;
+  color: rgba(4, 59, 114, 1);
+  font-family: 'Pretendard-Bold';
+  font-size: 1.75rem;
+  font-weight: initial !important;
+  text-align: center;
+  line-height: 2.37rem;
+  margin-bottom: 1rem;
+}
+.game-intro .result-box .result-box-title > span {
+  font-family: 'Pretendard-Bold';
+  font-size: 1.75rem;
+  font-weight: initial !important;
+}
+.game-intro .game-count {
+  margin-bottom: 0rem !important;
+  border-bottom: 1px solid #22334533 !important;
+  padding-bottom: 1rem !important;
+}
+.game-intro .game-count .count-label {
+  margin-top: 2.75rem;
+  font-size: 1.5rem !important;
+}
+.game-intro .game-count .count-num {
+  font-size: 2.75rem !important;
+  margin-top: -0.5rem;
+  font-family: 'Pretendard-SemiBold' !important;
+  color: rgba(4, 59, 114, 1) !important;
+}
+.game-intro .result-box .result-box-title:before,
+.game-intro .game-count .count-label:before,
+.game-wrapper.basic .test-lists-wrap .title:before,
+.game-result .result-box.type .result-box-title:before,
+.game-result .result-box.most .result-box-title:before,
+.game-result .result-box .result-box-title p:before,
+.game-result .result-box .result-box-title span:before,
+.game-result .state h3 span:before,
+.test-lists-wrap .title:before,
+.rank_list_wrap .title:before,
+.rankingBox .myRanking h3::before,
+.rankingBox .topRanking h3::before {
+  background-color: transparent !important;
+}
+.game-result .result-box,
+.game-wrapper.basic .game-result .result-box {
+  border: none !important;
+  padding: 0 !important;
+  margin-top: 3.125rem !important;
+}
+.game-result .img-halt-box .list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem;
+  width: 100%;
+}
+.game-intro .img-halt-box .list li img {
+  border-radius: 12px !important;
+  max-width: 9.68rem !important;
+}
+.game-result .img-halt-box .list li {
+  display: flex;
+  flex-direction: row !important;
+  background-color: rgba(245, 246, 248, 1);
+  width: 100%;
+  padding: 1.5rem 1.25rem;
+  border-radius: 12px !important;
+  justify-content: flex-start !important;
+  gap: 0.87rem;
+}
+.game-wrapper.basic .game-result .good,
+.game-wrapper.basic .game-result .bad {
+  margin-bottom: 0.37rem !important;
+}
+.game-result .img-halt-box {
+  margin: 0 !important;
+}
+.game-result .img-halt-box .list li img {
+  border-radius: 12px !important;
+  margin: 0 !important;
+  max-width: 6.9rem !important;
+}
+.img-halt-box .most_types a {
+  display: block;
+  width: 100%;
+}
+.game-result .goodbad-area {
+  display: flex;
+  flex-direction: column;
+  text-align: left !important;
+}
+.goodbad-area .label-bottom-title {
+  color: rgba(4, 59, 114, 1);
+  font-size: 1.37rem;
+  font-family: 'Pretendard-Bold';
+}
+.goodbad-area .label-bottom {
+  font-family: 'Pretendard-Medium';
+  font-size: 1.125rem;
+}
+.game-wrapper.basic .game-result .good,
+.game-wrapper.basic .game-result .bad {
+  background-color: rgba(245, 130, 32, 1);
+  border-radius: 6px;
+  width: 2.62rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1em !important;
+  font-family: 'Pretendard-Medium';
+  font-weight: initial !important;
+}
+/* 유형슌위, 다시하기 */
+.restart-btn {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+}
+.restart-btn-img {
+  width: 1.625rem;
+}
+.border-area {
+  border-top: rgba(242, 243, 245, 1) solid 8px;
+}
+.game-result-bottom-btn-wrapper {
+  padding: 0 1.875rem !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+.myrank-btn .common-btn {
+  margin-top: 2.19rem;
+}
+
+.retest-btn .common-btn {
+  margin: 1rem 0 2.875rem 0;
+  background-color: rgba(4, 59, 114, 1) !important;
+}
+
+.game-result .recommend-list {
+  padding: 0 1.438rem 0 2rem !important;
+}
+.bottom-color {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15rem;
+  z-index: -2;
+  background-color: rgba(245, 130, 32, 1);
+}
+.game-result .recommend-list .slide-box .img-box {
+  width: 100% !important;
+  height: 9rem;
+  margin: 0px !important;
+  background-size: cover;
+  background-position: top left;
+}
+.game-result .recommend-list .slide-box .slide-text {
+  background-color: transparent !important;
+  width: 101%;
+  font-size: 1rem;
+  line-height: 2.5rem !important;
+}
+.game-result .recommend-list .swiper-slide {
+  width: 10rem;
+  height: 12rem;
+}
+.btn-white-round {
+  font-size: 1.2rem !important;
+  width: 12.5rem !important;
+}
+.game-result .recommend-list .inner .title {
+  font-size: 1.5rem !important;
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12.5px !important;
+  }
+  .game-intro {
+    font-size: 12px !important;
+  }
+  .game-intro .btn-wrap {
+    font-size: 14px;
+  }
+  .game-intro .btn-game-start {
+    padding: 1.8rem 0 !important;
+  }
+  .game-wrap .game-body .question-title {
+    font-size: 1.7rem !important;
+  }
+  .game-wrap .game-body.test-step-4 .question-title {
+    font-size: 1.6rem !important;
+  }
+  .game-wrap .game-body.test-step-5 .question-title,
+  .game-wrap .game-body.test-step-8 .question-title {
+    font-size: 1.7rem !important;
+  }
+  .game-wrap .select-area a {
+    font-size: 1.3rem !important;
+  }
+  .result-header,
+  .question-controller .controller-title {
+    font-size: 1.6rem !important;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 450px) {
+  html {
+    font-size: 14px !important;
+  }
+  .game-intro {
+    font-size: 14px !important;
+  }
+  .game-intro .btn-wrap {
+    font-size: 14px;
+  }
+  .game-intro .btn-game-start {
+    padding: 1.8rem 0 !important;
+  }
+  .game-wrap .game-body .question-title {
+    font-size: 1.7rem !important;
+  }
+  .game-wrap .game-body.test-step-4 .question-title {
+    font-size: 1.6rem !important;
+  }
+  .game-wrap .game-body.test-step-5 .question-title,
+  .game-wrap .game-body.test-step-8 .question-title {
+    font-size: 1.7rem !important;
+  }
+  .game-wrap .select-area a {
+    font-size: 1.3rem !important;
+  }
+  .result-header,
+  .question-controller .controller-title {
+    font-size: 1.6rem !important;
+  }
+  .circle {
+    display: inline-block; /* 영역적용가능해짐 */
+    width: 1.3rem;
+    height: 1.3rem;
+    top: 2px;
+  }
+}
