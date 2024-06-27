@@ -1,0 +1,1518 @@
+:root {
+  --game-207-color-black: #333333;
+  --game-207-color-btn: linear-gradient(180deg, #ffffff 0%, #ffe921 100.15%, #999999 107.69%);
+  --game-207-color-disabled: linear-gradient(rgb(255, 255, 255) 3%, rgb(224, 222, 222) 65%);
+  --game-207-color-white: white;
+  --game-207-font-main: 'ChosunGu';
+  --game-207r-font-result-title: 'DNFBitBitv2';
+  --game-207-font-result-txt: 'NeoDunggeunmo';
+  --game-207-font-result-hastag: 'NanumSquareNeo-Variable';
+}
+
+@font-face {
+  font-family: 'NeoDunggeunmo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DNFBitBitv2';
+  src: url('https://cdn.banggooso.com/assets/fonts/DNFBitBitv2.otf') format('otf'),
+    url('https://cdn.banggooso.com/assets/fonts/DNFBitBitv2.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf') format('opentype');
+}
+@font-face {
+  font-family: 'ChosunGu';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 애니메이션 효과들  */
+/* (1) 커졌다 작아졌다 */
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* (2) 페이드인 */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+/* (3) 페이드아웃 */
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* (3-1) 페이드아웃 */
+@keyframes fadeOutReal {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* (4) 진동 */
+@keyframes vibration {
+  from {
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(-1deg);
+  }
+}
+/* (5) 메세지 내려옴 */
+@keyframes goDown {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  to {
+    transform: translateZ(0);
+  }
+}
+
+/* (6) 하트 애니메이션 */
+.heart-div {
+  position: absolute;
+  top: 13%;
+  right: 19%;
+}
+.heart {
+  background-color: pink;
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: rotate(-45deg);
+  animation: fadeOut 2s infinite;
+}
+@keyframes beat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(-45deg);
+  }
+}
+.heart::after {
+  background-color: pink;
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: 0;
+  left: 0.5rem;
+}
+
+.heart::before {
+  background-color: pink;
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: -0.5rem;
+  left: 0px;
+}
+
+/* (7) 깜박임 */
+@keyframes blinked {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* 디바이스 화면 조정 */
+/* 갤럭시 폴드는 폭이 너무 좁아서 얘만 폰트사이즈 좀 작게 기준두기!! */
+@media screen {
+  .game-result .rand-num {
+    color: white !important;
+    opacity: 60%;
+  }
+}
+@media screen and (max-width: 290px) {
+  html {
+    font-size: 10.9px !important;
+  }
+  .game-result .result-penguin-pop {
+    position: absolute;
+    top: -8% !important;
+  }
+  .intro-avatar-box {
+    width: 19rem !important;
+    height: 19rem !important;
+  }
+  .go-land-btn {
+    font-size: 1.1rem !important;
+  }
+  .result-top .result-txt {
+    font-size: 1.32rem !important;
+  }
+  .game-loading-wrap img {
+    width: 200%;
+  }
+}
+@media screen and (max-width: 361px) and (min-width: 330px) {
+  .game-result .result-penguin-pop {
+    top: -10% !important;
+  }
+}
+@media screen and (max-width: 424px) and (min-width: 361px) {
+  .game-result .result-penguin-pop {
+    top: -12% !important;
+  }
+}
+@media screen and (max-width: 450px) and (min-width: 424px) {
+  .game-result .result-penguin-pop {
+    top: -11% !important;
+  }
+}
+@media screen and (max-width: 330px) and (min-width: 291px) {
+  .game-result .result-penguin-pop {
+    top: -8% !important;
+  }
+}
+@media screen and (max-height: 800px) and (min-height: 655px) {
+  .loading-btn-box {
+    top: 46rem !important;
+  }
+}
+
+@media screen and (max-width: 420px) and (min-width: 290px) {
+  html {
+    font-size: 13px !important;
+  }
+  .intro-avatar-box {
+    width: 20rem !important;
+    height: 20rem !important;
+  }
+}
+/* 기기마다 인트로 캐릭터 사이징 다르게 */
+
+@media screen and (min-width: 500px) {
+  .intro-avatar-box {
+    width: 20rem !important;
+    height: 20rem !important;
+  }
+}
+html {
+  font-size: 16px;
+  font-family: var(--game-207-font-main);
+}
+body {
+  font-family: 'pretendard-medium';
+  transform: skew(0deg) !important;
+}
+
+.game-wrapper .app-main {
+  height: 100vh;
+  max-width: 500px;
+  background-color: var(--game-207-color-white);
+  margin-top: -4rem;
+}
+/* 공통 클래스 */
+
+.img-width {
+  width: 100%;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.pos-ab {
+  position: absolute;
+}
+.pos-rel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.preload {
+  display: none;
+}
+
+/* .inline-center{
+  text-align: center;
+} */
+
+/* 공통 컴포넌트 */
+/* 1. 버튼 */
+.common-btn {
+  padding: 1rem;
+  font-size: 1.38rem;
+  font-weight: 900 !important;
+  font-family: var(--game-207-font-main);
+  border: #333333 solid 1.5px;
+
+  width: 80%;
+  margin: 1.5rem auto;
+  border-radius: 1000px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background: var(--game-207-color-btn);
+
+  /* 
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;  */
+}
+/* 1-(1). 버튼 인터랙션 */
+/* .common-btn:before {
+ pointer-events: none;
+ position: absolute;
+ z-index: -1;
+ content: '';
+ top: 100%;
+ left: 5%;
+ height: 10px;
+ width: 90%;
+ opacity: 0;
+ background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+ background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+
+ -webkit-transition-duration: 0.3s;
+ transition-duration: 0.3s;
+ -webkit-transition-property: transform, opacity;
+ transition-property: transform, opacity;
+}
+ .common-btn:focus, .common-btn:active {
+ -webkit-transform: translateY(-7px);
+ transform: translateY(-7px);
+ background: linear-gradient(180deg, #FFFFFF 0%, #ffe921c2 100.15%,  #ffe921c2 107.69%);
+
+}
+ .common-btn:focus:before, .common-btn:active:before {
+ opacity: 1;
+ -webkit-transform: translateY(5px);
+ transform: translateY(5px);
+} */
+
+/* 1-(2). 버튼 활성화 색상 */
+.disabled {
+  background: var(--game-207-color-disabled) !important;
+}
+
+/* 헤더 */
+.game-wrapper .app-header .app-logo {
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/header/logo.png');
+  width: 15rem;
+  z-index: 99;
+}
+.game-wrapper .app-header {
+  height: 3.3rem;
+  z-index: 99;
+  background: none;
+  border: none;
+}
+.game-wrapper .intro-header {
+  background-color: rgba(180, 224, 120, 1);
+}
+.result .app-logo {
+  background-color: var(--game-207-color-white);
+}
+.result-header {
+  background: var(--game-207-color-white) !important;
+}
+/* 공유 */
+
+/* 인트로 : 공유 아이콘 이미지 */
+.game-intro .share-sns-list {
+  margin: 0 auto !important;
+  padding-bottom: 5rem !important;
+}
+.game-intro .share-sns-list .list-title {
+  font-size: 1.25rem;
+  font-family: var(--game-207-font-main);
+  font-weight: 900;
+  margin-bottom: 0.5rem !important;
+}
+.share-sns-list .btn-share {
+  display: inline-block;
+  background-position: center center;
+  width: 3rem;
+  height: 3rem;
+  text-indent: -99999px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.share-sns-list .list-title .list {
+  margin: 0;
+  height: 4rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.share-sns-list .list li {
+  display: inline-block;
+  height: 100%;
+}
+.game-result .share-sns-list {
+  margin: 2.5rem 0 2rem 0 !important;
+}
+.game-result .share-sns-list .list-title {
+  font-size: 1.25rem !important;
+  font-family: var(--game-207-font-main);
+  font-weight: 900;
+}
+.game-result .share-sns-list span {
+  font-size: 1.25rem !important;
+}
+.share-sns-list .btn-share.instagram {
+  display: block;
+  margin-left: 0.5rem;
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/result/insta.png');
+}
+.share-sns-list .btn-share.facebook {
+  display: block;
+  margin-left: 0.5rem;
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/result/fb.png');
+}
+.share-sns-list .list li + li {
+  margin-left: 0;
+}
+.share-sns-list .btn-share.kakao {
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/result/kakao.png');
+}
+.share-sns-list .btn-share.twitter {
+  margin-left: 0.5rem;
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/result/twt.png');
+}
+.share-sns-list .btn-share.link-copy {
+  margin-left: 0.5rem;
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/result/link.png');
+}
+
+/* 결과 : 공유 아이콘 이미지 */
+.game-result .share-result .share-sns-list .btn-share.instagram {
+  display: block;
+  margin-left: 0.5rem;
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/result/insta.png');
+}
+.game-result .share-result .share-sns-list .btn-share.facebook {
+  display: block;
+  margin-left: 0.5rem;
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/result/fb.png');
+}
+
+/* 인트로 페이지 */
+.game-wrapper .game-intro {
+  width: 100%;
+  background-color: rgba(180, 236, 96, 0.849);
+  padding-bottom: 0rem !important;
+  margin-top: 2rem;
+}
+
+.game-intro .intro-page {
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/background/2.png');
+  background-repeat: repeat;
+  background-size: 100%;
+  padding: 2.9rem 1.75rem 0rem 1.75rem;
+}
+.game-intro .intro-page .img-intro {
+  width: 95%;
+  margin: 0 auto;
+}
+.game-intro .intro-page .img-title {
+  width: 90%;
+  margin: 0 auto;
+}
+.game-intro .img-title p {
+  height: 100px;
+}
+.game-intro .font-bigger {
+  font-size: 5rem;
+}
+.game-intro .img-intro {
+  width: 80%;
+  margin: 0 auto;
+}
+.game-intro .intro-avatar-box {
+  position: relative;
+  height: 19rem;
+  width: 19rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -6%);
+}
+
+.game-intro .intro-avatar {
+  width: 100%;
+  /* animation: fadeIn 1.5s; */
+  position: absolute;
+}
+
+.game-intro .user-nickname {
+  width: 100%;
+  text-align: center;
+  margin-top: -1rem;
+}
+.game-intro .user-nickname input {
+  font-family: var(--game-207-font-main);
+  font-weight: 900;
+  font-size: 1.3rem;
+  width: 70%;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 0.7rem;
+  border: 1.6px solid rgba(0, 0, 0, 1);
+  text-align: center;
+}
+.game-intro .user-nickname input::placeholder {
+  color: rgba(202, 202, 202, 1);
+}
+
+.game-intro .start-btn-div {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.game-intro .start-btn-div .common-btn {
+  width: 90%;
+  padding: 1rem;
+  margin: 1rem auto 0rem auto;
+  font-size: 1.5rem;
+}
+
+.game-intro .game-count {
+  display: block !important;
+  font-family: var(--game-207-font-main);
+  font-weight: 900;
+  margin-top: 2.5em;
+  margin-bottom: 1.5rem;
+}
+
+.game-intro .game-count .count-label {
+  font-family: var(--game-207-font-main);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+.game-intro .game-count .count-num {
+  font-family: var(--game-207-font-main);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+.game-intro .game-count .count-label:before {
+  display: none;
+}
+.share-sns-list {
+  margin: 0 auto;
+}
+
+/* 페이지 1 */
+.step1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/background/dm.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 251, 211, 0.838);
+}
+.step1 .message-pop {
+  position: absolute;
+  top: 29%;
+  left: 0;
+  padding: 4.37rem;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  animation: goDown 1s;
+}
+
+.step1 .bubble-deco {
+  position: absolute;
+  top: 30%;
+  right: 0%;
+  animation: fadeOut 1s infinite;
+}
+
+/* 페이지 2 */
+.step2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--game-207-color-white);
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 1.5rem 0 1.5rem;
+  margin-top: 4rem;
+  align-items: center;
+}
+.step2 .dm-pop {
+  display: none;
+}
+.step2 .dm-box {
+  background-color: var(--game-207-color-white);
+  border-radius: 10px;
+  width: 100%;
+  height: 38rem;
+  overflow-y: scroll;
+}
+.step2 .dm-box-padding {
+  padding-bottom: 1rem;
+  background: transparent !important;
+}
+.step2 .profile-div {
+  width: 10%;
+}
+.step2 .penguin-img-width {
+  width: 100%;
+}
+.step2 .penguin-profile {
+  display: flex;
+  flex-direction: row;
+  gap: 0.37rem;
+  align-items: center;
+  font-family: var(--game-207-font-main);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+.step2 .dm-chat-txt {
+  font-family: var(--game-207-font-main);
+  margin: 0.2rem 1rem;
+  padding: 0.5rem 0.9rem 0.5rem 1rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.step2 .dm-box .penguin {
+  background-color: rgba(46, 46, 46, 0.95);
+  color: var(--game-207-color-white);
+  border: 1.8px solid #333333;
+  border-radius: 0px 20px 20px 20px;
+  display: inline-block;
+}
+.step2 .dm-box .me {
+  padding: 0;
+  margin-top: 1.6rem;
+  margin-left: auto;
+  text-align: right;
+  margin-right: 0rem !important;
+}
+.step2 .dm-box .me-last {
+  padding-bottom: 1rem;
+}
+.step2 .dm-box .me-txt {
+  border: 1.8px solid #333333;
+  background-color: #fff282;
+  color: #333333;
+  border-radius: 30px 0px 30px 30px;
+
+  padding: 0.6rem 1rem 0.6rem 1rem;
+}
+
+.step2 .chat-notice {
+  font-family: 'pretendard';
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  text-align: right;
+  margin-right: 5rem;
+  animation: blinked 1s 2;
+}
+.step2 .chat-notice-next {
+  margin-left: 1rem;
+  text-align: left;
+}
+.step2 .chat-notice-next-1 {
+  font-family: 'pretendard';
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  text-align: right;
+  margin-right: 1rem !important;
+  position: absolute !important;
+  right: 10% !important;
+  width: 100% !important;
+  top: 110% !important;
+  animation: blinked 1s 2;
+}
+.step2 .finger-img {
+  position: absolute;
+  width: 3rem;
+  right: -9%;
+  /* animation : animate 1.5s infinite; */
+}
+.step2 .penguin-face-div {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 50%;
+  animation: animate 2s infinite;
+}
+
+.step2 .dm-last1 {
+  animation: fadeIn 1s;
+  background-color: rgb(51, 51, 51, 1) !important;
+}
+.step2 .dm-last2 {
+  animation: fadeIn 3s;
+  background-color: rgb(51, 51, 51, 0.7) !important;
+}
+.step2 .dm-last3 {
+  animation: fadeIn 5s;
+  background-color: rgb(51, 51, 51, 0.5) !important;
+}
+.step2 .common-btn {
+  margin: 3% auto 0 auto;
+  font-size: 1.3rem;
+  width: 90%;
+}
+
+/* 페이지 3*/
+.step3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 1.5rem 0 1.5rem;
+  margin-top: 4rem;
+}
+.step3 .custom-area {
+  position: relative;
+  width: 100%;
+  height: 39rem;
+  display: flex;
+  flex-direction: column;
+}
+.step3 .custom-top {
+  margin-top: 0.3rem;
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--game-207-color-white);
+}
+.step3 .avatar-wrap {
+  position: relative;
+  background-color: var(--game-207-color-white);
+  margin: 0 auto;
+  width: 18rem;
+  height: 18rem;
+}
+.step3 .custom-mid {
+  overflow-x: scroll;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transform: skew(0deg) !important;
+  margin: 0.5rem 0;
+}
+.step3 .custom-mid .category-inner {
+  gap: 0.3rem;
+  height: 90%;
+  overflow: hidden;
+  width: 80%;
+}
+.step3 .custom-mid .custom-category {
+  font-size: 1.3rem;
+  font-family: var(--game-207-font-main);
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #bbbbbb 92.08%);
+  font-weight: 900;
+  border-radius: 1000px;
+  border: 1.5px solid #333333;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transform: skew(0deg) !important;
+  align-items: center;
+  display: flex;
+}
+
+.step3 .custom-mid .custom-category:hover,
+.step3 .custom-mid .custom-category:active {
+  background: linear-gradient(rgb(246, 248, 230) 35%, rgb(221, 223, 202) 65%);
+}
+
+.step3 .custom-btn-div {
+  text-align: center;
+  background: transparent;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 19.92%);
+}
+.custom-btn-div .common-btn {
+  font-size: 1.3rem;
+  margin: 0 auto;
+  width: 89%;
+}
+.step3 .custom-bottom-group {
+  width: 100%;
+  background-color: var(--game-207-color-white);
+  flex: 1;
+  overflow-y: scroll;
+}
+.step3 .custom-bottom-group .item-wrapper {
+  height: 100%;
+}
+.step3 .custom-bottom {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  gap: 0.2rem 0.1rem;
+  margin-left: 0.5rem;
+}
+.step3 .scroll-btn {
+  /* border: 2px solid #213356; */
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 100%;
+  border-radius: 50%;
+  width: 8%;
+  height: 1.5rem;
+  background: #ffffff url('https://cdn.banggooso.com/assets/images/game207/intro/right.png') no-repeat center 55% / auto
+    2rem;
+}
+.step3 .scroll-btn:first-of-type {
+  height: 100%;
+  background-color: var(--game-207-color-white);
+  margin: 0 0.3rem 0 0.3rem;
+  background: #ffffff url(https://cdn.banggooso.com/assets/images/game207/intro/left.png) no-repeat center 55% / auto
+    2rem !important;
+}
+.step3 .scroll-btn:last-of-type {
+  width: 2rem;
+  flex: 1;
+  height: 100%;
+  margin: 0 0.4rem 0 0.3rem;
+}
+.step3 ul.category-inner li.category.active,
+.step3 ul.category-inner li.category:active {
+  background: var(--game-207-color-btn);
+  color: #0c0c0c;
+}
+.item-wrapper::-webkit-scrollbar-track {
+  margin-top: 1px;
+}
+.item-wrapper::-webkit-scrollbar,
+.category-item::-webkit-scrollbar,
+.item-list::-webkit-scrollbar {
+  display: block !important;
+  width: 8px;
+}
+
+.step3 .delete-img {
+  position: absolute;
+  height: 100%;
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.step3 .custom-img {
+  margin-top: 0.3rem;
+  -webkit-user-drag: auto;
+  width: 33%;
+  background-image: url('https://cdn.banggooso.com/assets/images/game207/background/3.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+.step3 .category-item {
+  display: flex;
+}
+
+.step3 .category-item[data-seq='2'],
+.category-item[data-seq='3'],
+.category-item[data-seq='4'],
+.category-item[data-seq='5'],
+.category-item[data-seq='6'],
+.category-item[data-seq='7'],
+.category-item[data-seq='8'] {
+  display: none;
+}
+
+.step3 .custom-grad {
+  height: 5rem;
+  width: 100%;
+  top: -100%;
+  left: 0;
+  position: absolute;
+  background: linear-gradient(rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1) 70%);
+}
+/* 커스텀할때 새로고침 방지 */
+body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+#scroll-container {
+  height: 100%;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 스크롤 디자인 */
+.step3 .custom-bottom-group::-webkit-scrollbar {
+  display: block !important;
+  background-color: #ffffff;
+  width: 0.3rem;
+  border-radius: 10px;
+  margin: 0rem 1rem;
+}
+
+.step3 .custom-bottom-group::-webkit-scrollbar-thumb {
+  display: block !important;
+  background-color: #d9d9d9;
+  width: 0.3rem;
+  border-radius: 10px;
+  height: 30%;
+}
+
+.step3 .custom-mid::-webkit-scrollbar-thumb,
+.step3 .custom-mid::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* 옷입히기 */
+.step3 .object-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.step3 .custom-img-wear {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+}
+.step3 .avatar-object {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+/* 로딩페이지 */
+.loading {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.game-loading-wrap .img_btn img {
+  width: 100%;
+  height: 100%;
+}
+.game-loading-wrap img {
+  width: 150%;
+}
+
+.game-loading-wrap .swiper {
+  margin: 0rem 0 0.2rem 0;
+}
+.game-loading-wrap .full-page {
+  background: url(https://cdn.banggooso.com/assets/images/game207/background/dm.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  min-height: 1000px;
+  position: relative;
+  padding-top: 11.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-loading-wrap > .full-page .peng-animation-wrapper {
+  position: relative;
+  width: 31.25rem;
+  height: 23.75rem;
+}
+.game-loading-wrap > .full-page .peng-bg {
+  position: absolute;
+
+  width: 31.25rem;
+}
+.game-loading-wrap > .full-page .peng-bg-1,
+.game-loading-wrap > .full-page .peng-bg-2 {
+  display: none;
+}
+.game-loading-wrap > .full-page > .loading-content-wrapper {
+  background: url(https://cdn.banggooso.com/assets/images/game207/loading/loading-inner-bg.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 31.25rem;
+  height: 34.348125rem;
+  flex-direction: column;
+}
+.game-loading-wrap > .full-page > .loading-content-wrapper .content-swiper-wrapper {
+  background: url(https://cdn.banggooso.com/assets/images/game207/loading/slider-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 31.25rem;
+  height: 20.910625rem;
+  position: absolute;
+  bottom: 0.3rem;
+}
+/* slider-bg.png */
+.game-loading-wrap .swiper-slide img {
+  display: block;
+  width: 11rem;
+}
+
+.game-loading-wrap .loading-slider {
+  margin-top: 7.5rem;
+}
+
+.game-loading-wrap .loading-btn-box {
+  top: 75%;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.game-loading-wrap .loading-btn-box .common-btn {
+  margin: 0 auto !important;
+  width: 81%;
+}
+.game-loading-wrap .loading-disabled {
+  background: var(--game-207-color-disabled) !important;
+}
+
+/* 결과페이지 */
+.app-result {
+  background-color: rgba(177, 223, 116, 1) !important;
+}
+.game-result {
+  width: 100%;
+  position: relative;
+  padding: 0 !important;
+  margin-top: 4rem;
+}
+.game-result .result-main-size {
+  background-image: url(https://cdn.banggooso.com/assets/images/game207/background/result2.png);
+  background-size: 100%;
+  z-index: 5;
+}
+.game-result .result-background {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  max-width: 500px;
+}
+.game-result .result-second-header {
+  background-color: black;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  color: var(--game-207-color-white);
+  font-family: var(--game-207-font-main);
+  font-weight: 700;
+  font-size: 1.4rem !important;
+  letter-spacing: 0px;
+  z-index: 1;
+}
+.game-result .result-avatar {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 캡처용 확대버전 */
+.game-result .capture-wrap-big .capture-object {
+  width: 100.8%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.capture-wrap-big .capture-overlay,
+.capture-wrap-big .pos-rel {
+  width: 25rem;
+  height: 25rem;
+}
+
+.capture-wrap-big .capture-overlay .hastag {
+  width: 100%;
+  bottom: 1.03rem;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5rem;
+  gap: 0.5rem;
+  text-align: center;
+  justify-content: center;
+}
+.capture-wrap-big .capture-overlay .hastag-txt {
+  font-family: var(--game-207-font-result-hastag);
+  border-radius: 100px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 900 !important;
+  letter-spacing: 0.012rem;
+}
+/* 임시 캡처 구역 */
+.game-result .capture-wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 22.5rem;
+  height: 22.5rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.game-result .capture-overlay {
+  position: absolute;
+  z-index: 10;
+  width: 22.5rem;
+  height: 22.5rem;
+}
+.game-result .rand-num {
+  color: white !important;
+  opacity: 60%;
+  margin: 0.5rem auto auto 1rem;
+  font-family: var(--game-207-font-result-hastag);
+}
+.game-result .hastag {
+  width: 100%;
+  bottom: 1rem;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.game-result .capture-wrap .capture-object {
+  width: 100.8%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game-result .img-box {
+  width: 22.7rem;
+  margin: 0.9375rem 0 0;
+}
+.game-result .border-area {
+  width: 100%;
+}
+.game-result .download-img {
+  width: 100%;
+  z-index: 12;
+  position: absolute;
+}
+.result-top .result-title {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: var(--game-207r-font-result-title) !important;
+  background: linear-gradient(0deg, #f0ff42 13.95%, #ffffff 94.19%);
+
+  background-image: linear-gradient(0deg, #f0ff42 13.95%, #ffffff 94.19%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-top: 1.75rem;
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #181818;
+}
+
+.result-top .thumb-img-text {
+  font-family: var(--game-207-font-main);
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 900;
+  margin: 1rem auto;
+}
+.result-top .result-txt-box {
+  background-color: #d6ff31;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: none;
+  border-left: none;
+  margin-top: 0.75rem;
+}
+.result-top .result-txt {
+  background-color: var(--game-207-color-white);
+  border-radius: 8px;
+  font-family: var(--game-207-font-result-txt) !important;
+  border: 1px solid black;
+  padding: 0.625rem;
+  font-size: 1.375rem;
+}
+
+.game-result .result-guide {
+  padding: 0 1.25rem;
+}
+.game-result .todo-box {
+  margin-top: 2.5rem;
+}
+.game-result .guide-box {
+  margin-top: 1.95rem;
+}
+
+.game-result .result-event {
+  padding: 0 1.25rem;
+}
+.game-result .result-event-box {
+  margin-top: 3.2rem;
+  background-color: rgba(235, 235, 235, 1);
+  padding: 0 2.188rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1.3px solid rgba(0, 0, 0, 1);
+}
+.result-bubble-deco-1 {
+  position: absolute;
+  bottom: 3%;
+  left: 0%;
+  animation: fadeOut 2s infinite;
+}
+.result-bubble-deco-2 {
+  position: absolute;
+  bottom: 63%;
+  right: 0%;
+  animation: fadeOut 2s infinite;
+}
+.result-bubble-deco-3 {
+  position: absolute;
+  top: 12%;
+  right: 0%;
+  animation: fadeOut 2s infinite;
+}
+.game-result .result-btn-div {
+  width: 90%;
+  text-align: center;
+}
+.game-result .land-btn-div {
+  width: 100%;
+  text-align: center;
+}
+.land-youtube-div {
+  padding: 0 0.9rem;
+}
+.game-result .hastag_copy {
+  padding: 0.6rem !important;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.game-result .result-btn {
+  background: linear-gradient(180deg, #ffffff 0%, #97fc8f 107.68%, #49ea76 107.69%);
+  width: 80%;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.game-result .go-land-btn-div {
+  width: 100% !important;
+}
+.game-result .go-land-btn {
+  background: var(--game-207-color-btn);
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 900 !important;
+  margin: 1.5rem auto 0rem auto;
+  cursor: pointer;
+}
+.game-result .go-land-btn2 {
+  background: var(--game-207-color-btn);
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 900 !important;
+  margin: 1.5rem auto 0rem auto;
+}
+.game-result .result-penguin-pop {
+  position: absolute;
+  top: -13%;
+  right: -3.8%;
+  z-index: 900;
+  width: 43%;
+}
+.game-result .result-youtube-box {
+  margin-top: 3.2rem;
+  background-color: rgba(211, 236, 137, 1);
+  padding: 3rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1.3px solid rgba(0, 0, 0, 1);
+}
+.game-result .result-video-div {
+  margin: 3rem auto;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.game-result .result-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  text-align: center;
+}
+.game-result .result-iframe {
+  height: 15.438rem;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.game-result .info {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.game-result .btn_retest > a {
+  background: var(--game-207-color-btn);
+  color: black;
+  font-weight: 900 !important;
+  font-family: var(--game-207-font-main) !important;
+  padding: 0.8rem;
+  width: 75%;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+.game-result .page-full {
+  margin: 0;
+}
+
+.game-result .contents-more .contents-main .contents-logo img {
+  width: 30%;
+}
+.contents-more .contents-list {
+  padding: 0 !important;
+}
+.game-result .contents-more .contents-list .game-btn {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+  padding: 1.7rem 1.7rem !important;
+  position: relative;
+  letter-spacing: 0.1px;
+  font-size: 1rem !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-top: 1px solid black !important;
+  cursor: pointer;
+}
+.game-result .contents-more .contents-list .game-btn:before {
+  left: 90%;
+}
+
+.game-result .contents-more {
+  background: transparent;
+  font-family: var(--game-207-font-main) !important;
+  border: none;
+  margin: 0 0 2.5rem 0;
+  flex-direction: column;
+}
+
+.game-result .contents-more .contents-main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 1.5rem 1.5rem 0.75rem 1.5rem;
+}
+
+.game-result .contents-more .contents-list {
+  margin: 0 0 0.5rem 0;
+}
+
+.game-result .contents-more .contents-list {
+  border-left: 1px solid #272727;
+}
+.game-result .contents-more .contents-list {
+  border-left: none;
+}
+
+.game-result .contents-more .contents-main .sub-text {
+  color: #272727;
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-size: 1.5rem !important;
+  text-align: left;
+}
+.game-result .recommend-list .swiper-container {
+  padding-left: 2rem;
+  padding-bottom: 5rem;
+}
+.game-result .recommend-list .inner {
+  gap: 0.3rem;
+  height: 80%;
+  overflow: unset;
+  width: 100%;
+}
+.game-result .recommend-list .inner .title {
+  font-size: 1.5rem;
+}
+
+.game-btn-wrapper > .game-btn {
+  box-shadow: none;
+  border: #333333 solid 1.5px !important;
+}
+
+.loading-rel {
+  width: 100%;
+  position: relative;
+  height: 47.5rem !important;
+}
+
+.replay-img {
+  width: 1.1rem !important;
+  display: flex;
+  align-items: center;
+}
+.game-btn-wrapper .btn_retest .game-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+}
+.hastag-img-copy {
+  width: 0.9rem;
+}
+
+.contents-more .contents-main .sub-text {
+  font-weight: 900;
+  font-size: 1.3rem !important;
+  text-align: left;
+}
+.contents-more .contents-list .game-btn {
+  font-size: 1.1rem !important;
+  padding: 1.25rem 1rem !important;
+}
+.game-result .recommend-list .swiper-slide {
+  width: 10.5rem !important;
+  height: 13rem !important;
+}
+.game-result .recommend-list .slide-box .slide-text {
+  background-color: transparent !important;
+}
+
+.game-result .recommend-list .slide-box .img-box {
+  width: 99%;
+  height: 10rem;
+  object-fit: contain;
+  margin: -1px;
+  margin-left: 0.5px;
+  background-size: cover;
+  background-position: top left;
+}
+
+.btn-white-round,
+.slide-text {
+  font-weight: 900;
+  font-family: 'RixGulim', sans-serif;
+  font-size: 1.1rem;
+}
+.game-result .recommend-list .btn-wrap {
+  text-align: center;
+  padding-bottom: 2.65625rem;
+  justify-content: center;
+  display: flex;
+}
+
+.custom-capture-wrapper {
+  position: absolute;
+  width: 100%;
+  right: -10000px;
+  bottom: 0;
+}
+#custom-capture {
+  z-index: -99;
+  position: relative;
+  width: 25rem;
+  height: 25rem;
+  margin: 0 auto;
+}
+
+.loading-img {
+  width: 100% !important;
+}
+
+.result-top .append-area-hide {
+  visibility: hidden;
+}
